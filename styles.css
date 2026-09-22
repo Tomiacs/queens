@@ -1,0 +1,202 @@
+:root {
+  --board-border: #1c1c1c;
+  --cell-line: rgba(0, 0, 0, 0.28);
+  --region-line: #1c1c1c;
+  --x-color: rgba(40, 40, 40, 0.7);
+  --page-bg: #f6f7f9;
+  --panel-bg: #ffffff;
+  --text: #1f2328;
+  --muted: #6b7280;
+  --accent: #0a66c2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  background: var(--page-bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  padding: 24px 16px 48px;
+}
+
+.app {
+  width: 100%;
+  max-width: 520px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+header h1 {
+  margin: 0 0 4px;
+  font-size: 28px;
+  letter-spacing: -0.5px;
+}
+
+header .subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.toolbar .left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.timer {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+select,
+button {
+  font: inherit;
+  border-radius: 8px;
+  border: 1px solid #d0d5dd;
+  background: var(--panel-bg);
+  color: var(--text);
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled),
+select:hover {
+  border-color: var(--accent);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+button.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.status {
+  min-height: 24px;
+  margin: 0 0 12px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.status.error {
+  color: #c02626;
+}
+
+.status.win {
+  color: #1a7f37;
+}
+
+/* --- A tábla --- */
+.board {
+  display: grid;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border: 3px solid var(--board-border);
+  border-radius: 6px;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.cell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Belső vékony rácsvonalak */
+  border-right: 1px solid var(--cell-line);
+  border-bottom: 1px solid var(--cell-line);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.cell.last-col {
+  border-right: none;
+}
+.cell.last-row {
+  border-bottom: none;
+}
+
+/* Vastag határvonalak a régiók között */
+.cell.edge-top {
+  border-top: 2px solid var(--region-line);
+}
+.cell.edge-bottom {
+  border-bottom: 2px solid var(--region-line);
+}
+.cell.edge-left {
+  border-left: 2px solid var(--region-line);
+}
+.cell.edge-right {
+  border-right: 2px solid var(--region-line);
+}
+
+/* Jelölések */
+.cell .mark {
+  font-size: min(6vw, 30px);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.cell .x-mark {
+  color: var(--x-color);
+  font-weight: 700;
+}
+
+.cell .queen {
+  font-size: min(7.5vw, 38px);
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25));
+}
+
+.cell.auto .x-mark {
+  opacity: 0.45;
+}
+
+.cell.conflict {
+  outline: 3px solid #d1242f;
+  outline-offset: -3px;
+  z-index: 2;
+}
+
+.cell:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: -3px;
+  z-index: 3;
+}
+
+.hint {
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.hint b {
+  color: var(--text);
+}

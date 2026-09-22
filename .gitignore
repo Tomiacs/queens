@@ -1,0 +1,13 @@
+# Függőségek
+node_modules/
+
+# Naplók
+*.log
+npm-debug.log*
+
+# OS / szerkesztő
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/

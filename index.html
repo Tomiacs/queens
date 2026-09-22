@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Queens</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <h1>👑 Queens</h1>
+        <p class="subtitle">Minden sorba, oszlopba és színbe pontosan egy királynő.</p>
+      </header>
+
+      <div class="toolbar">
+        <div class="left">
+          <select id="levelSelect" aria-label="Pálya választása"></select>
+          <span class="timer" id="timer">0:00</span>
+        </div>
+        <button id="resetBtn" class="primary">Újrakezdés</button>
+      </div>
+
+      <p class="status" id="status"></p>
+
+      <div class="board" id="board" role="grid" aria-label="Queens tábla"></div>
+
+      <div class="hint">
+        <p>
+          <b>Sima kattintás:</b> X jelölés ki/be (megjelölöd a kizárt mezőket). •
+          <b>Dupla kattintás:</b> királynő lerakása – ilyenkor a tiltott mezőket
+          automatikusan kiikszeli a program.
+        </p>
+        <p>
+          <b>Cél:</b> helyezz el pontosan egy királynőt minden sorban, minden
+          oszlopban és minden színrégióban úgy, hogy két királynő ne érintkezzen
+          (átlósan sem).
+        </p>
+      </div>
+    </div>
+
+    <script src="levels.js"></script>
+    <script src="game.js"></script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "queens",
+  "version": "1.0.0",
+  "description": "A LinkedIn Queens-stílusú logikai játék böngészőben, tiszta HTML/CSS/JS-ből.",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test/validate-levels.js"
+  },
+  "keywords": ["queens", "puzzle", "game", "linkedin"],
+  "license": "MIT"
+}
