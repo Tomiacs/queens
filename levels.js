@@ -45,6 +45,31 @@ const LEVELS = [
       ["N", "G", "G", "G", "G", "G", "G", "G"],
     ],
   },
+
+  {
+    id: "linkedin-7x7",
+    name: "2. pálya",
+    size: 7,
+    regions: {
+      G: { name: "Zöld",    color: "#9ed08e" },
+      O: { name: "Narancs", color: "#f8c179" },
+      A: { name: "Szürke",  color: "#d9d9d9" },
+      P: { name: "Lila",    color: "#bfa2dd" },
+      B: { name: "Kék",     color: "#95c8f5" },
+      R: { name: "Piros",   color: "#f47b5d" },
+      Y: { name: "Sárga",   color: "#e6ee63" },
+    },
+    // Sorok fentről lefelé, oszlopok balról jobbra.
+    grid: [
+      ["G", "G", "G", "O", "O", "O", "A"],
+      ["G", "G", "P", "O", "B", "O", "A"],
+      ["G", "P", "P", "P", "B", "B", "A"],
+      ["G", "G", "P", "P", "P", "R", "R"],
+      ["Y", "P", "P", "P", "P", "P", "R"],
+      ["Y", "Y", "P", "Y", "P", "R", "R"],
+      ["Y", "Y", "Y", "Y", "Y", "Y", "R"],
+    ],
+  },
 ];
 
 // Elérhetővé tesszük a böngészőben (és Node-ban, ha később kellene).
