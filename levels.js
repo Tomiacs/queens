@@ -70,6 +70,62 @@ const LEVELS = [
       ["Y", "Y", "Y", "Y", "Y", "Y", "R"],
     ],
   },
+
+  {
+    id: "linkedin-9x9",
+    name: "3. pálya",
+    size: 9,
+    regions: {
+      P: { name: "Lila",    color: "#bfa2dd" },
+      O: { name: "Narancs", color: "#f8c179" },
+      G: { name: "Zöld",    color: "#9ed08e" },
+      B: { name: "Kék",     color: "#95c8f5" },
+      K: { name: "Rózsa",   color: "#e6a9c9" },
+      D: { name: "Piros",   color: "#f47b5d" },
+      Y: { name: "Sárga",   color: "#e6ee63" },
+      T: { name: "Drapp",   color: "#b7a98d" },
+      W: { name: "Szürke",  color: "#e4e3df" },
+    },
+    // Sorok fentről lefelé, oszlopok balról jobbra.
+    grid: [
+      ["P", "P", "P", "P", "P", "P", "P", "P", "P"],
+      ["P", "O", "O", "G", "G", "B", "B", "B", "P"],
+      ["P", "O", "G", "G", "G", "G", "G", "B", "P"],
+      ["P", "O", "G", "G", "G", "G", "G", "B", "K"],
+      ["P", "P", "P", "G", "D", "G", "K", "K", "K"],
+      ["P", "Y", "G", "G", "G", "G", "G", "T", "K"],
+      ["P", "Y", "G", "G", "G", "G", "G", "T", "W"],
+      ["P", "Y", "Y", "Y", "G", "G", "T", "T", "W"],
+      ["P", "P", "P", "P", "P", "P", "W", "W", "W"],
+    ],
+  },
+
+  {
+    id: "linkedin-8x8-hard",
+    name: "4. pálya (nehéz)",
+    size: 8,
+    regions: {
+      P: { name: "Lila",    color: "#bfa2dd" },
+      O: { name: "Narancs", color: "#f8c179" },
+      B: { name: "Kék",     color: "#95c8f5" },
+      G: { name: "Zöld",    color: "#9ed08e" },
+      W: { name: "Szürke",  color: "#d9d9d9" },
+      R: { name: "Piros",   color: "#f47b5d" },
+      L: { name: "Lime",    color: "#cdeb4f" },
+      T: { name: "Drapp",   color: "#b7a98d" },
+    },
+    // Sorok fentről lefelé, oszlopok balról jobbra.
+    grid: [
+      ["P", "O", "O", "O", "B", "B", "B", "B"],
+      ["P", "O", "O", "O", "B", "G", "G", "B"],
+      ["P", "O", "O", "O", "W", "G", "O", "O"],
+      ["P", "O", "O", "W", "W", "O", "O", "O"],
+      ["O", "O", "R", "R", "O", "O", "L", "L"],
+      ["O", "O", "R", "O", "O", "O", "L", "L"],
+      ["O", "O", "O", "O", "O", "O", "O", "O"],
+      ["O", "O", "T", "T", "T", "T", "O", "O"],
+    ],
+  },
 ];
 
 // Elérhetővé tesszük a böngészőben (és Node-ban, ha később kellene).
