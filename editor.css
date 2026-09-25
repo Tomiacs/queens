@@ -1,0 +1,182 @@
+/* A pályaszerkesztő saját stílusai – a tábla a styles.css .board/.cell
+   osztályait használja újra. */
+
+.editor-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 820px) {
+  .app.editor {
+    max-width: 900px;
+  }
+  .editor-layout {
+    grid-template-columns: 300px 1fr;
+    align-items: start;
+  }
+}
+
+.panel {
+  background: var(--panel-bg);
+  border: 1px solid #e3e6ea;
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.panel h2 {
+  margin: 0 0 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--muted);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.field label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.field input,
+.field select {
+  padding: 7px 9px;
+}
+
+.field.row {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Paletta / ecsetlista */
+.palette {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.brush {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #f7f8fa;
+}
+
+.brush.active {
+  border-color: var(--accent);
+  background: #eef5fc;
+}
+
+.brush .swatch {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  flex: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.brush .swatch::-webkit-color-swatch-wrapper { padding: 2px; }
+.brush .swatch::-webkit-color-swatch { border: none; border-radius: 4px; }
+
+.brush .name {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid transparent;
+  background: transparent;
+  padding: 4px 6px;
+  border-radius: 6px;
+  font: inherit;
+}
+
+.brush .name:focus {
+  border-color: #d0d5dd;
+  background: #fff;
+}
+
+.brush .del {
+  border: none;
+  background: transparent;
+  color: #c02626;
+  font-size: 18px;
+  line-height: 1;
+  padding: 2px 6px;
+  cursor: pointer;
+}
+
+.brush.eraser .swatch {
+  background: repeating-conic-gradient(#ccc 0% 25%, #fff 0% 50%) 50% / 12px 12px;
+}
+
+.btn-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+button.ghost {
+  background: #f2f4f7;
+  border-color: #e3e6ea;
+}
+
+/* A szerkesztő tábla: a festetlen cellák világosak, a kurzor ecset */
+.board.edit .cell {
+  cursor: crosshair;
+}
+
+.board.edit .cell.empty {
+  background: #f4f4f5;
+}
+
+.status.warn {
+  color: #b25e00;
+}
+
+.export textarea {
+  width: 100%;
+  min-height: 200px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12.5px;
+  line-height: 1.5;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  padding: 10px;
+  resize: vertical;
+  white-space: pre;
+  overflow: auto;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.topbar a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.hintline {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 8px 0 0;
+  line-height: 1.6;
+}

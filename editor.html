@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Queens – Pályaszerkesztő</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="editor.css" />
+  </head>
+  <body>
+    <div class="app editor">
+      <div class="topbar">
+        <a href="index.html">← Vissza a játékhoz</a>
+        <span class="timer">Szerkesztő</span>
+      </div>
+
+      <header>
+        <h1>🎨 Pályaszerkesztő</h1>
+        <p class="subtitle">
+          Válassz ecsetet (színrégiót), és fesd ki a cellákat. A program élőben
+          ellenőrzi, hogy a pálya egyértelműen megoldható-e.
+        </p>
+      </header>
+
+      <div class="editor-layout">
+        <!-- Bal oldali vezérlőpanel -->
+        <div class="panel">
+          <div class="field">
+            <label for="loadSelect">Kiindulás</label>
+            <select id="loadSelect"></select>
+          </div>
+          <div class="field row">
+            <label for="sizeSelect">Méret</label>
+            <select id="sizeSelect"></select>
+          </div>
+          <div class="field">
+            <label for="idInput">Azonosító (id)</label>
+            <input id="idInput" type="text" placeholder="pl. sajat-palya-1" />
+          </div>
+          <div class="field">
+            <label for="nameInput">Név</label>
+            <input id="nameInput" type="text" placeholder="pl. 5. pálya" />
+          </div>
+
+          <h2>Ecsetek (régiók)</h2>
+          <div class="palette" id="palette"></div>
+          <div class="btn-row">
+            <button id="addRegionBtn" class="ghost">+ Új régió</button>
+            <button id="clearBtn" class="ghost">Rács ürítése</button>
+          </div>
+          <p class="hintline">
+            Kattints vagy húzz a táblán a festéshez. A régió színére kattintva
+            módosíthatod a színt, a nevére a nevet.
+          </p>
+        </div>
+
+        <!-- Jobb oldal: tábla + validáció + export -->
+        <div>
+          <p class="status" id="status"></p>
+          <div class="board edit" id="board" role="grid" aria-label="Szerkesztő tábla"></div>
+
+          <div class="panel export" style="margin-top: 16px">
+            <h2>Export</h2>
+            <p class="hintline" style="margin-top: 0">
+              Másold be az alábbi objektumot a <code>levels.js</code> <code>LEVELS</code>
+              tömbjébe (egy új elemként), vagy töltsd le JSON-ként.
+            </p>
+            <textarea id="exportArea" readonly spellcheck="false"></textarea>
+            <div class="btn-row" style="margin-top: 10px">
+              <button id="copyBtn" class="primary">Másolás a vágólapra</button>
+              <button id="downloadBtn" class="ghost">JSON letöltése</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="levels.js"></script>
+    <script src="puzzle.js"></script>
+    <script src="editor.js"></script>
+  </body>
+</html>
